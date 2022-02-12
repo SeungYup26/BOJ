@@ -24,5 +24,6 @@ int main()
 
     std::cout << min << ' ' << max << '\n';
 
+    delete[] numbers;
     return 0;
 }
