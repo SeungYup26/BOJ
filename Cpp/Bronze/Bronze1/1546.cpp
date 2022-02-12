@@ -22,5 +22,7 @@ int main()
 
     std::cout << average / N << '\n';
 
+    delete[] scores;
+
     return 0;
 }
