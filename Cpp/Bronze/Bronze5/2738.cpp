@@ -3,6 +3,10 @@
 
 int main()
 {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
+    std::cout.tie(nullptr);
+
     int n = 0, m = 0;
     std::cin >> n >> m;
 
