@@ -1,32 +1,32 @@
 #include <iostream>
+#include <array>
 
 int d(int n)
 {
-    int result = n, temp = n;
-    while (temp != 0)
+    int self_number = n;
+    while (n != 0)
     {
-        result += temp % 10;
-        temp /= 10;
+        self_number += n % 10;
+        n /= 10;
     }
 
-    return result;
+    return self_number;
 }
 
 int main()
 {
-    std::cout.sync_with_stdio(false);
-    std::cin.tie(0);
+    std::array<bool, 10001> is_self{};
+    for (int i = 1; i <= 10000; ++i)
+    {
+        int true_index = d(i);
+        if (true_index <= 10000)
+            is_self[true_index] = true;
+    }
+    for (int i = 1; i <= 10000; ++i)
+    {
+        if (!is_self[i])
+            std::cout << i << '\n';
+    }
 
-    bool arr[10000] { false };
-    for (int i = 1; i < 10000; i++)
-    {
-        int g = d(i);
-        if (g < 10000) {
-            arr[g] = true;
-        }
-    }
-    for (int i = 1; i < 10000; i++)
-    {
-        if (!arr[i]) std::cout << i << '\n';
-    }
+    return 0;
 }
