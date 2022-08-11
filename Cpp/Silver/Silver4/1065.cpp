@@ -14,7 +14,7 @@ int main()
     int n = 0;
     std::cin >> n;
     
-    if (n > 100) {
+    if (n >= 100) {
         int result = 99;
         for (int i = 100; i <= n; ++i)
         {
@@ -24,8 +24,9 @@ int main()
 
         std::cout << result << '\n';   
     }
-    else
+    else {
         std::cout << n << '\n';
+    }
 
     return 0;
 }
