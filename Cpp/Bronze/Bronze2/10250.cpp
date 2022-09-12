@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 
 int main()
 {
@@ -11,16 +10,9 @@ int main()
         int h = 0, w = 0, n = 0;
         std::cin >> h >> w >> n;
 
-        std::vector<int> rooms;
-        for (int room = 1; room <= w; ++room)
-        {
-            for (int floor = 1; floor <= h; ++floor)
-            {
-                rooms.emplace_back(floor * 100 + room);
-            }
-        }
-
-        std::cout << rooms[n - 1] << '\n';
+        int room = n % h == 0 ? h * 100 + n / h
+                              : n % h * 100 + n / h + 1;
+        std::cout << room << '\n';
     }
 
     return 0;
