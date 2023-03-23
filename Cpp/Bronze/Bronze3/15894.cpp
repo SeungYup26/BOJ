@@ -2,7 +2,7 @@
 
 int main()
 {
-    unsigned long n = 0;
+    long n{};
     std::cin >> n;
     std::cout << n * 4 << '\n';
 
